@@ -3,6 +3,7 @@
 ![CSHARP](https://img.shields.io/badge/Language-CSHARP-lightgreen?style=for-the-badge&logo=csharp)
 <img src="https://img.shields.io/github/v/release/K3rnel-Dev/NukeCryptor?style=for-the-badge&color=cyan">
 <img src="https://img.shields.io/github/downloads/K3rnel-Dev/NukeCryptor/total?style=for-the-badge&color=pink">
+<img src="https://img.shields.io/github/license/K3rnel-Dev/NukeCryptor?style=for-the-badge&color=red"></img>
 
 ![Banner](banner.png)
 
