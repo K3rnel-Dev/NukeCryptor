@@ -56,7 +56,8 @@ This project is for educational purposes only, intended for studying malware and
 - **Author**: <a href="https://github.com/k3rnel-dev">@K3rnel-Dev</a>
 - **dnlib**: A library for manipulating .NET assemblies.  
   GitHub: [https://github.com/0xd4d/dnlib](https://github.com/0xd4d/dnlib)
-- **Eziriz**: .NET Extended protector.  
+- **Eziriz .NET Reactor**: .NET Extended protector.  
   Web: [https://www.eziriz.com/dotnet_reactor.htm](https://www.eziriz.com/dotnet_reactor.htm)
+- **Guna.UI2**: Library for program customization and design.  
 
 ---
