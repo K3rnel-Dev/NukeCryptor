@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{50A16284-8159-44F7-AF2F-DFC383F85012}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>NukeBuilder</RootNamespace>
+    <AssemblyName>NukeCryptor</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>none</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>none</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>nuke.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="dnlib, Version=4.4.0.0, Culture=neutral, PublicKeyToken=50e96378b6e77999, processorArchitecture=MSIL">
+      <HintPath>..\packages\dnlib.4.4.0\lib\net35\dnlib.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2">
+      <HintPath>D:\DeveloperCompilators\Libs\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Algorithms\Cryptor\Compilator.cs" />
+    <Compile Include="Algorithms\Cryptor\Obfuscator.cs" />
+    <Compile Include="Algorithms\Cryptor\PackerCompilator.cs" />
+    <Compile Include="Algorithms\Cryptor\Protector.cs" />
+    <Compile Include="Algorithms\EncryptHelper\AESEncrypt.cs" />
+    <Compile Include="Algorithms\EncryptHelper\XOREncrypt.cs" />
+    <Compile Include="Algorithms\FormsHelper\AssemblyEngine.cs" />
+    <Compile Include="Algorithms\FormsHelper\MainElementor.cs" />
+    <Compile Include="Forms\About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OptionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OptionsForm.Designer.cs">
+      <DependentUpon>OptionsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\StubSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StubSettings.Designer.cs">
+      <DependentUpon>StubSettings.cs</DependentUpon>
+    </Compile>
+    <None Include="FusionModule\reactor.lib">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\PackerStub.cs" />
+    <Compile Include="Runtime.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="packages.config" />
+    <None Include="Resources\Stub.cs" />
+    <EmbeddedResource Include="Forms\About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OptionsForm.resx">
+      <DependentUpon>OptionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StubSettings.resx">
+      <DependentUpon>StubSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="nuke.ico" />
+    <None Include="Resources\AboutLogo.png" />
+    <None Include="Resources\SoftwareAuthor.gif" />
+    <None Include="Resources\5_Abstract.png" />
+    <None Include="Resources\4_Abstract.png" />
+    <None Include="Resources\3_Abstract.png" />
+    <None Include="Resources\2_Abstract.png" />
+    <None Include="Resources\1_Abstract.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MainLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Guna2Button1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Guna2Button2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Guna2Button3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Guna2Button4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Guna2Button6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PictureBox1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PictureBox7 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PictureBox7 %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PictureBox7 %284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PictureBox7 %285%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PictureBox7 %286%29.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
